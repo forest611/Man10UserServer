@@ -7,6 +7,12 @@ namespace Man10UserServer.Controllers;
 [Route("[controller]")]
 public class ScoreController : ControllerBase
 {
+
+    [HttpGet("try")]
+    public IActionResult TryConnect()
+    {
+        return StatusCode(200);
+    }
     
     [HttpGet("get")]
     public int Get(string uuid)
