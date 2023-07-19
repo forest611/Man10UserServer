@@ -65,7 +65,9 @@ public class SystemContext : DbContext
         Pass = config["SystemDB:Pass"] ?? "";
         User = config["SystemDB:User"] ?? "";
         DatabaseName = config["SystemDB:DatabaseName"] ?? "";
-        
+
+        var context = new SystemContext();
+        Console.WriteLine(context.Database.CanConnect() ? "MySQLの接続を確認" : "MySQLの接続に失敗");
     }
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
